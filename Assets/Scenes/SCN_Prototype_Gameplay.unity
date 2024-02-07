@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 480721561}
   - component: {fileID: 480721560}
   - component: {fileID: 480721559}
+  - component: {fileID: 480721558}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -489,6 +490,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &480721558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480721557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee69f8ecf69e1c4e92e0aed53ae6350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!50 &480721559
 Rigidbody2D:
   serializedVersion: 4
@@ -509,7 +523,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &480721560
 BoxCollider2D:
   m_ObjectHideFlags: 0
