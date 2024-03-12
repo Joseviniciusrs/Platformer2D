@@ -18,6 +18,13 @@ public class Player : MonoBehaviour
     public float JumpScaleX = 0.8f;
     public float duration = .3f;
 
+
+
+    [Header("Animation Player")]
+    public string boolRun = "RunBool";
+    public Animator animator;
+
+
     private float _currentSpeed;
 
     private void Update()
@@ -35,14 +42,28 @@ public class Player : MonoBehaviour
             _currentSpeed = speed;
 
         if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            //myRigidBody.MovePosition(myRigidBody.position - velocity * Time.deltaTime);
+        { 
             myRigidBody.velocity = new Vector2(-_currentSpeed, myRigidBody.velocity.y);
+            if(myRigidBody.transform.localScale.x != -1)
+            {
+                myRigidBody.transform.DOScaleX(-1, .1f);
+            }
+            animator.SetBool(boolRun, true);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            //myRigidBody.MovePosition(myRigidBody.position + velocity * Time.deltaTime);
             myRigidBody.velocity = new Vector2(_currentSpeed, myRigidBody.velocity.y);
+            if (myRigidBody.transform.localScale.x != 1)
+            {
+                myRigidBody.transform.DOScaleX(1, .1f);
+            }
+
+            animator.SetBool(boolRun, true);
+        }
+        else
+        {
+            animator.SetBool(boolRun, false);
+
         }
 
 
