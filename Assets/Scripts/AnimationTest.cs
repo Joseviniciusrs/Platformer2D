@@ -8,6 +8,11 @@ public class AnimationTest : MonoBehaviour
 
     public string triggerToPlay = "Fly";
 
+    private void OnValidate()
+    {
+        if (animator == null) animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))

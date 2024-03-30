@@ -16,13 +16,14 @@ public class Player : MonoBehaviour
     [Header("Animation setup")]
     public float JumpScaleY = 1.5f;
     public float JumpScaleX = 0.8f;
-    public float duration = .3f;
+    public float playerSwipeDuration = .1f;
 
 
 
     [Header("Animation Player")]
     public string boolRun = "RunBool";
     public Animator animator;
+    public float duration;
 
 
     private float _currentSpeed;
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
             myRigidBody.velocity = new Vector2(-_currentSpeed, myRigidBody.velocity.y);
             if(myRigidBody.transform.localScale.x != -1)
             {
-                myRigidBody.transform.DOScaleX(-1, .1f);
+                myRigidBody.transform.DOScaleX(-1, playerSwipeDuration);
             }
             animator.SetBool(boolRun, true);
         }
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour
             myRigidBody.velocity = new Vector2(_currentSpeed, myRigidBody.velocity.y);
             if (myRigidBody.transform.localScale.x != 1)
             {
-                myRigidBody.transform.DOScaleX(1, .1f);
+                myRigidBody.transform.DOScaleX(1, playerSwipeDuration);
             }
 
             animator.SetBool(boolRun, true);

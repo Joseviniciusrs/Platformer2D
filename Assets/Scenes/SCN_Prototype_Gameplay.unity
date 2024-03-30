@@ -385,9 +385,10 @@ MonoBehaviour:
   forceJump: 8
   JumpScaleY: 1.5
   JumpScaleX: 0.8
-  duration: 0.3
+  playerSwipeDuration: 0.1
   boolRun: RunBool
   animator: {fileID: 1179478342}
+  duration: 0.3
 --- !u!114 &405382839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,6 +965,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   m_PrefabInstance: {fileID: 1297611504}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1184936196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1184936197}
+  m_Layer: 0
+  m_Name: PFB_Coin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1184936197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184936196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 29.545311, y: 12.917121, z: 4.78615}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1268294179
 GameObject:
   m_ObjectHideFlags: 0
