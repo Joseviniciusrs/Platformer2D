@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     public string boolRun = "RunBool";
     public Animator animator;
     public float duration;
+    public string triggerDeath = "Death";
+
 
 
     private float _currentSpeed;
@@ -33,6 +35,22 @@ public class Player : MonoBehaviour
         HandleJump();
         HandleMovement();
 
+    }
+
+     [SerializeField] private HealthBase _healthBase;
+
+    private void Awake()
+    {
+        if(_healthBase != null)
+        {
+            _healthBase.OnKill += OnPlayerKill;
+        }
+    }
+
+    private void OnPlayerKill()
+    {
+        _healthBase.OnKill -= OnPlayerKill;
+        animator.SetTrigger(triggerDeath);
     }
 
     private void HandleMovement()
@@ -99,6 +117,11 @@ public class Player : MonoBehaviour
     {
         myRigidBody.transform.DOScaleY(JumpScaleY, duration).SetLoops(2, LoopType.Yoyo);
         myRigidBody.transform.DOScaleY(JumpScaleX, duration).SetLoops(2, LoopType.Yoyo);
+    }
+
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 }
 
